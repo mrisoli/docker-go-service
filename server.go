@@ -1,14 +1,19 @@
 package main
 
 import (
-        "fmt"
-        "net/http"
+	"fmt"
+	"log"
+	"net/http"
 )
 
-func main() {
-        http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
-                fmt.Fprintf(w, "Hello, World!\n")
-        })
+// HelloWorldServer Basic server that returns hello world string
+func HelloWorldServer(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Hello, World!")
+}
 
-        http.ListenAndServe(":80", nil)
+func main() {
+	handler := http.HandlerFunc(HelloWorldServer)
+	if err := http.ListenAndServe(":80", handler); err != nil {
+		log.Fatalf("could not listen on port 80 %v", err)
+	}
 }
