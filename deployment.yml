@@ -14,9 +14,6 @@ spec:
     spec:
       containers:
       - name: hello-app
-        image: gcr.io/thematic-land-251219/docker-go-service:latest
+        image: eu.gcr.io/thematic-land-251219/docker-go-service:latest
         ports:
         - containerPort: 8080
-        env:
-          - name: PORT
-            value: "8080"
