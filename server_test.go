@@ -14,7 +14,7 @@ func TestMain(t *testing.T) {
 		HelloWorldServer(response, request)
 
 		got := response.Body.String()
-		want := "Hello, v2!"
+		want := "Hello, v3!"
 
 		if got != want {
 			t.Errorf("got %q, want %q", got, want)

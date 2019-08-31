@@ -8,7 +8,7 @@ import (
 
 // HelloWorldServer Basic server that returns hello world string
 func HelloWorldServer(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, v2!")
+	fmt.Fprintf(w, "Hello, v3!")
 }
 
 func main() {
